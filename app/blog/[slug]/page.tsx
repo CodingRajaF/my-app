@@ -4,13 +4,15 @@ import remarkGfm from "remark-gfm";
 import { consola } from "consola";
 
 const blogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
-    consola.info((await params).slug);
-    const pageContent = getPostData((await params).slug);
+    const { slug } = await params;
+    const pageContent = await getPostData(slug);
     consola.info(pageContent);
     return (
         <article className="prose">
-            <h1>{pageContent.title}</h1>
-            <p>{pageContent.date}</p>
+            <header>
+                <h1>{pageContent.title}</h1>
+                <p>{pageContent.date}</p>
+            </header>
             <Markdown remarkPlugins={[remarkGfm]}>{pageContent.contentMarkdown}</Markdown>
         </article>
     );

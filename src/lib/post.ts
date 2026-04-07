@@ -1,5 +1,5 @@
 import matter from "gray-matter";
-import fs from "fs";
+import fs from "fs/promises";
 import path from "path";
 import { consola } from "consola";
 
@@ -14,13 +14,12 @@ type params = {
     title: string;
 };
 // mdファイルをreactコンポーネントに変換する関数
-const getPostData = (slug: string): params => {
-    const mdFile = path.join(postDirectory, `${slug}.md`);
+const getPostData = async (slug: string): Promise<params> => {
+    const fullPath = path.join(postDirectory, `${slug}.md`);
     // mdファイルの取得
-    const fileContent = fs.readFileSync(mdFile);
+    const fileContent = await fs.readFile(fullPath);
     // gray-matterでmdファイルのfrontmatterを取得
     const mdData = matter(fileContent);
-    // reactコンポーネントに変換
 
     // paramsを返す
     return {
