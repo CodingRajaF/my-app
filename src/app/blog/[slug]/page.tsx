@@ -1,4 +1,4 @@
-import getPostData from "@/src/lib/post";
+import getPostData from "@/lib/post";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { consola } from "consola";

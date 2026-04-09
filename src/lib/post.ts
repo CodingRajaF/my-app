@@ -4,7 +4,7 @@ import path from "path";
 import { consola } from "consola";
 
 // contentsのpathの宣言
-const postDirectory = path.join(process.cwd(), "contents");
+const postDirectory = path.join(process.cwd(), "posts");
 
 // 関数の戻り値の型宣言
 type params = {
