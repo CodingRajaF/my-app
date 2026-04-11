@@ -33,7 +33,8 @@ const getPostData = async (slug: string): Promise<params> => {
     };
 };
 
-export const getPostList = async (): Promise<params[]> => {
+// ./posts/のコンテンツを取得して、params[]を返す
+export const getAllPosts = async (): Promise<params[]> => {
     const postFiles = await fs.readdir(postDirectory);
     const postContents = await postFiles.map(async (postFile) => {
         const slug = path.parse(postFile).name;
