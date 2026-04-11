@@ -1,17 +1,12 @@
-import { getAllPosts } from "@/lib/post";
-import PostList from "@/components/ui/post-list";
-import Link from "next/link";
-import path from "path";
+import PostListByTag from "@/components/common/post-list";
 
-const AllPost = async () => {
-    const postContents = await getAllPosts();
-    // 日付で降順に並び替え
-    postContents.sort((a, b) => b.date.localeCompare(a.date));
+const PostList = async () => {
     return (
-        <main>
-            <PostList posts={postContents} />
-        </main>
+        <>
+            <h1>hi</h1>
+            <PostListByTag />
+        </>
     );
 };
 
-export default AllPost;
+export default PostList;
