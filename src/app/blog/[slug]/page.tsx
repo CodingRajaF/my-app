@@ -1,9 +1,11 @@
 import getPostData from "@/lib/post";
+import TagList from "@/components/common/tag-list";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { consola } from "consola";
 
-const blogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
+// ブログ記事の個別ページ
+const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
     const { slug } = await params;
     const pageContent = await getPostData(slug);
     consola.info(pageContent);
@@ -12,10 +14,11 @@ const blogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
             <header>
                 <h1>{pageContent.title}</h1>
                 <time>{pageContent.date}</time>
+                <TagList tags={pageContent.tag} />
             </header>
             <Markdown remarkPlugins={[remarkGfm]}>{pageContent.contentMarkdown}</Markdown>
         </article>
     );
 };
 
-export default blogPage;
+export default BlogPage;
