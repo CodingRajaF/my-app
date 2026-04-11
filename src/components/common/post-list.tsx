@@ -6,9 +6,10 @@ import path from "path";
 
 // postsで./posts/のコンテンツ一覧を受け取りリストを表示する
 export const PostList = (posts: PostData[]) => {
+    const sortedPost = posts.sort((a, b) => b.date.localeCompare(a.date));
     return (
         <ul>
-            {posts.map((post) => {
+            {sortedPost.map((post) => {
                 return (
                     // liはカード形式？かリスト形式にしたい
                     <li key={post.slug} className="block">
