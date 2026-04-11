@@ -1,6 +1,6 @@
 import { getAllPosts } from "@/lib/post";
 import { getPostsByTag } from "@/lib/post";
-import PostListByTag from "@/components/ui/post-list";
+import PostListByTag from "@/components/common/post-list";
 
 const TagPage = async ({ params }: { params: Promise<{ tag: string }> }) => {
     const posts = await getAllPosts();
