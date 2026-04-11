@@ -1,6 +1,6 @@
 import type { PostData } from "@/lib/post";
 import { getAllPosts } from "@/lib/post";
-import TagList from "./tag-list";
+import TagList from "@/components/common/tag-list";
 import Link from "next/link";
 import path from "path";
 
@@ -12,7 +12,7 @@ export const PostList = (posts: PostData[]) => {
                 return (
                     // liはカード形式？かリスト形式にしたい
                     <li key={post.slug} className="block">
-                        <Link href={path.join(process.cwd(), post.slug)}>
+                        <Link href={path.join("/blog", post.slug)}>
                             <h1>{post.title}</h1>
                             <time>{post.date}</time>
                             <TagList tags={post.tag} />
