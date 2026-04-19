@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { HbMenu } from "@/components/common/HbMenu";
+import TheSchemaLogo from "@/components/common/TheSchemaLogo";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -25,21 +27,21 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="ja" suppressHydrationWarning>
-            <body
-                className={`${geistSans.variable} ${geistMono.variable} antialiased text-[18px] w-screen`}
-            >
+            <body className={`${geistSans.variable} ${geistMono.variable} antialiased w-screen`}>
                 <ThemeProvider
                     attribute="class"
                     defaultTheme="system"
                     enableSystem
                     disableTransitionOnChange
                 >
-                    <header className="h-[5vh] flex flex-row w-screen items-center gap-5">
-                        <div></div>
-                        <p className="font-bold text-3xl">Taruroma's blog</p>
-                        <p>つれずれ</p>
+                    <header className="h-auto flex flex-col w-screen items-start">
+                        <div className="w-screen border flex flex-row items-center">
+                            <TheSchemaLogo />
+                            <span>created By Ryok73</span>
+                        </div>
+                        <HbMenu tags={[""]} tabs={[""]} />
                     </header>
-                    <div>{children}</div>
+                    <div className="m-5">{children}</div>
                 </ThemeProvider>
             </body>
         </html>
