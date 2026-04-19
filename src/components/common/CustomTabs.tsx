@@ -5,7 +5,10 @@ export type TabProp = {
     tabName: string;
     tabLink: string;
 };
-export const CustomTabs = ({ params }: { params: TabProp[] }) => {
+
+export type NonEmptyArray<T> = [T, ...T[]];
+
+export const CustomTabs = ({ params }: { params: NonEmptyArray<TabProp> }) => {
     return (
         <Tabs defaultValue={params[0].tabName}>
             <TabsList variant={"line"}>
