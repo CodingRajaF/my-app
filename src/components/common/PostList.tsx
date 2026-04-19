@@ -1,24 +1,28 @@
 import type { PostData } from "@/lib/post";
 import { getAllPosts } from "@/lib/post";
-import TagList from "@/components/common/tag-list";
+import TagList from "@/components/common/TagList";
 import Link from "next/link";
 import path from "path";
+import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 
 // postsで./posts/のコンテンツ一覧を受け取りリストを表示する
-export const PostList = (posts: PostData[]) => {
+const PostList = (posts: PostData[]) => {
     const sortedPost = posts.sort((a, b) => b.date.localeCompare(a.date));
     return (
-        <ul>
+        <ul className="grid grid-cols-3">
             {sortedPost.map((post) => {
                 return (
                     // liはカード形式？かリスト形式にしたい
-                    <li key={post.slug} className="block">
-                        <Link href={path.join("/blog", post.slug)}>
-                            <h1>{post.title}</h1>
-                            <time>{post.date}</time>
-                            <TagList tags={post.tag} />
-                        </Link>
-                    </li>
+                    <Link key={post.slug} href={path.join("/blog", post.slug)}>
+                        <li key={post.slug}>
+                            <Card>
+                                <CardHeader>
+                                    <CardTitle>{post.title}</CardTitle>
+                                    <TagList tags={post.tag} />
+                                </CardHeader>
+                            </Card>
+                        </li>
+                    </Link>
                 );
             })}
         </ul>
@@ -26,7 +30,7 @@ export const PostList = (posts: PostData[]) => {
 };
 
 // tagで./posts/*.mdをフィルターし適合するpostsをリストで表示する
-const PostListByTag = async ({ tag }: { tag?: string }) => {
+export const PostListByTag = async ({ tag }: { tag?: string }) => {
     const posts = await getAllPosts();
     const postsByTag = tag
         ? posts.filter((post) => {
@@ -35,4 +39,3 @@ const PostListByTag = async ({ tag }: { tag?: string }) => {
         : posts;
     return PostList(postsByTag);
 };
-export default PostListByTag;
