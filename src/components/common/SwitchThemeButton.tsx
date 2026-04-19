@@ -13,7 +13,7 @@ export const SwitchTheme = () => {
                     theme == "dark" ? setTheme("light") : setTheme("dark");
                 }}
             >
-                {theme == "dark" ? <LuMoonStar /> : <LuSun />}
+                {theme == "dark" ? <LuSun /> : <LuMoonStar />}
             </CustomButton>
         </div>
     );
