@@ -44,7 +44,7 @@ export default function RootLayout({
     return (
         <html lang="ja" suppressHydrationWarning>
             <body
-                className={`${geistSans.variable} ${geistMono.variable} antialiased w-screen grid-bg-light dark:grid-bg-dark`}
+                className={`${geistSans.variable} ${geistMono.variable} antialiased w-full grid-bg-light dark:grid-bg-dark`}
             >
                 <ThemeProvider
                     attribute="class"
@@ -52,8 +52,8 @@ export default function RootLayout({
                     enableSystem
                     disableTransitionOnChange
                 >
-                    <header className="h-auto flex flex-col w-screen ">
-                        <div className="w-screen border-b flex flex-row justify-between items-center px-10">
+                    <header className="h-auto flex flex-col w-full ">
+                        <div className="w-full border-b flex flex-row justify-between items-center px-10">
                             <Link href={"/"} className=" flex flex-row items-center text-3xl gap-4">
                                 <span>$ME ../</span>
                             </Link>
@@ -62,7 +62,7 @@ export default function RootLayout({
                                 <SwitchTheme />
                             </div>
                         </div>
-                        <div className="w-screen ml-2 mt-2 flex justify-center"></div>
+                        <div className="w-full ml-2 mt-2 flex justify-center"></div>
                     </header>
                     <div className="container mx-auto my-5">{children}</div>
                 </ThemeProvider>
