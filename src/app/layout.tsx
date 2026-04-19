@@ -62,7 +62,6 @@ export default function RootLayout({
                                 <SwitchTheme />
                             </div>
                         </div>
-                        <div className="w-full ml-2 mt-2 flex justify-center"></div>
                     </header>
                     <div className="container mx-auto my-5">{children}</div>
                 </ThemeProvider>
