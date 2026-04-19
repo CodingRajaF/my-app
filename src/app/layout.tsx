@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Logo } from "@/components/common/LogoIcon";
 import { SwitchTheme } from "@/components/common/SwitchThemeButton";
 import Link from "next/link";
 
@@ -40,8 +39,8 @@ export default function RootLayout({
                     <header className="h-auto flex flex-col w-screen items-start">
                         <div className="w-screen border flex flex-row justify-between items-center px-20">
                             <Link href={"."} className=" flex flex-row items-center text-3xl gap-4">
-                                <Logo />
-                                <text>$ME</text>
+                                {/* <Logo /> */}
+                                <text>$ME ../</text>
                             </Link>
                             <SwitchTheme />
                         </div>
