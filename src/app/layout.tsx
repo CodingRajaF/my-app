@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 
 const TabProps: NonEmptyArray<TabProp> = [
     {
-        tabName: "All",
+        tabName: "Home",
         tabLink: "/",
     },
     {
@@ -44,7 +44,7 @@ export default function RootLayout({
     return (
         <html lang="ja" suppressHydrationWarning>
             <body
-                className={`${geistSans.variable} ${geistMono.variable} antialiased w-full grid-bg-light dark:grid-bg-dark`}
+                className={`${geistSans.variable} ${geistMono.variable} antialiased w-full grid-bg-light dark:grid-bg-dark grid grid-cols-3`}
             >
                 <ThemeProvider
                     attribute="class"
@@ -52,18 +52,40 @@ export default function RootLayout({
                     enableSystem
                     disableTransitionOnChange
                 >
-                    <header className="h-auto flex flex-col w-full ">
-                        <div className="w-full border-b flex flex-row justify-between items-center px-10">
-                            <Link href={"/"} className=" flex flex-row items-center text-3xl gap-4">
-                                <span>$ME ../</span>
-                            </Link>
+                    <div className="col-span-1 m-2 flex flex-col gap-3">
+                        {/* プロフ・About */}
+                        <div className="h-auto border">
+                            <Link
+                                href={"/"}
+                                className=" flex flex-row items-center text-3xl gap-4"
+                            ></Link>
+                            <div className="flex flex-row">
+                                {/* <img src="" alt="" /> */}
+                                <h1>Dev活</h1>
+                            </div>
+                            <p>
+                                ソフトウェアエンジニア志望
+                                <br />
+                                自動化・個人開発・設計
+                                <br />
+                                Arch Linux
+                            </p>
+                        </div>
+                        {/* バッジでリンクいれる */}
+                        <div className="border">
+                            <h1>Tag</h1>
+                            <div></div>
+                        </div>
+                    </div>
+                    <div className="col-span-2">
+                        <div className="w-full border-b flex flex-row justify-between items-center ">
                             <div className="flex flex-row items-center gap-3">
                                 <CustomTabs params={TabProps} />
-                                <SwitchTheme />
                             </div>
+                            <SwitchTheme />
                         </div>
-                    </header>
-                    <div className="container mx-auto my-5">{children}</div>
+                        <div className="container mx-auto my-5">{children}</div>
+                    </div>
                 </ThemeProvider>
             </body>
         </html>
