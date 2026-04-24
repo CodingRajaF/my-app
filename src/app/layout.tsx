@@ -5,6 +5,8 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { SwitchTheme } from "@/components/common/SwitchThemeButton";
 import { CustomTabs, type TabProp, NonEmptyArray } from "@/components/common/CustomTabs";
 import { CustomCard } from "@/components/common/CustomCard";
+import TagList from "@/components/common/TagList";
+import { getAllPosts } from "@/lib/post";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -36,11 +38,18 @@ const TabProps: NonEmptyArray<TabProp> = [
     },
 ];
 
-export default function RootLayout({
+export default async function RootLayout({
     children,
 }: Readonly<{
     children: React.ReactNode;
 }>) {
+    // Tag Cardに表示するタグを取得する
+    const allPosts = await getAllPosts();
+    const allTags = allPosts
+        .map((post) => {
+            return post.tag;
+        })
+        .flat();
     return (
         <html lang="ja" suppressHydrationWarning>
             <body

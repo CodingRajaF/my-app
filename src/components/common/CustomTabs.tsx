@@ -12,6 +12,7 @@ export type NonEmptyArray<T> = [T, ...T[]];
 
 export const CustomTabs = ({ params }: { params: NonEmptyArray<TabProp> }) => {
     const pathName = usePathname();
+    // ページロード時のデフォルトタブをURLから逆算するよう宣言
     const activeTab =
         (params.find((p) => p.tabLink === pathName)?.tabName ?? pathName.startsWith("/blog"))
             ? params[0].tabName
@@ -25,7 +26,7 @@ export const CustomTabs = ({ params }: { params: NonEmptyArray<TabProp> }) => {
                 {params.map((param) => {
                     return (
                         <Link key={param.tabName} href={param.tabLink}>
-                            <TabsTrigger value={param.tabName} className="text-1.5xl">
+                            <TabsTrigger value={param.tabName} className="w-50 text-2xl">
                                 {param.tabName}
                             </TabsTrigger>
                         </Link>
