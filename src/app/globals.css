@@ -105,7 +105,7 @@
     --accent: oklch(0.269 0 0);
     --accent-foreground: oklch(0.985 0 0);
     --destructive: oklch(0.704 0.191 22.216);
-    --border: oklch(44.977% 0.02982 257.711 / 0.497);
+    --border: oklch(94.611% 0.00011 271.152 / 0.634);
     --input: oklch(1 0 0 / 15%);
     --ring: oklch(0.556 0 0);
     --chart-1: oklch(0.87 0 0);
@@ -140,7 +140,7 @@
     background-repeat: repeat;
 }
 .grid-bg-light {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cline x1='0' y1='0' x2='160' y2='0' stroke='black' stroke-opacity='0.2' stroke-width='1'/%3E%3Cline x1='0' y1='0' x2='0' y2='160' stroke='black' stroke-opacity='0.2' stroke-width='1'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cline x1='0' y1='0' x2='160' y2='0' stroke='white' stroke-opacity='0.2' stroke-width='1'/%3E%3Cline x1='0' y1='0' x2='0' y2='160' stroke='white' stroke-opacity='0.2' stroke-width='1'/%3E%3C/svg%3E");
     background-size: 160px 160px;
     background-repeat: repeat;
 }

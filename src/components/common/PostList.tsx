@@ -13,7 +13,7 @@ const PostList = (posts: PostData[]) => {
             {sortedPost.map((post) => {
                 return (
                     <li key={post.slug}>
-                        <Card className="rounded-sm group transition-all duration-200 shadow shadow-vivid/30 hover:-translate-y-1 hover:shadow-md hover:shadow-vivid/50 hover:ring-vivid/40">
+                        <Card className="rounded-none">
                             <CardHeader>
                                 <Link
                                     key={post.slug}
