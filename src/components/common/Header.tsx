@@ -18,8 +18,8 @@ const TabProps: NonEmptyArray<TabProp> = [
 export const Header = () => {
     const tabSize = "w-35 h-auto";
     return (
-        <header className="col-span-2 flex items-center border border-border m-8 h-25 divide-x divide-border bg-background/10">
-            <div className="flex-1 flex p-4">
+        <header className="col-span-2 flex items-center border border-border m-8 h-25 divide-x divide-border bg-background/20">
+            <div className="flex-1 flex p-4 h-full">
                 <p className=" border border-border flex justify-center items-center mr-4">. . /</p>
                 <div className="text-border">
                     <p>Personal Log</p>
