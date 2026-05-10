@@ -16,12 +16,15 @@ const TabProps: NonEmptyArray<TabProp> = [
 ];
 
 export const Header = () => {
+    const tabSize = "w-40 h-auto";
     return (
-        <div className="col-span-2">
-            <div className="flex h-15 item-center">
-                <CustomTabs tabs={TabProps} />
-                <SwitchTheme className="flex items-center"/>
+        <header className="col-span-2">
+            <div className="flex h-20 item-center border border-border divide-x divide-border">
+                <CustomTabs tabs={TabProps} className={`${tabSize}`} />
+                <SwitchTheme
+                    className={`flex justify-center items-center ${tabSize}`}
+                />
             </div>
-        </div>
+        </header>
     );
 };
