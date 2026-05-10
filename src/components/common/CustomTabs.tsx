@@ -8,12 +8,14 @@ export type TabProp = {
     link: string;
 };
 
+type Params = { tabs: NonEmptyArray<TabProp> } & { className?: string };
+
 export type NonEmptyArray<T> = [T, ...T[]];
 
-export const CustomTabs = ({ tabs }: { tabs: NonEmptyArray<TabProp> }) => {
+export const CustomTabs = ({ tabs, className }: Params) => {
     const pathName = usePathname();
     return (
-        <nav className="flex h-auto">
+        <nav className={cn("flex h-auto justify-center", className)}>
             {tabs.map((tab) => {
                 const isActive =
                     tab.link === pathName || (tab.link !== "/" && pathName.startsWith(tab.link));
@@ -22,8 +24,10 @@ export const CustomTabs = ({ tabs }: { tabs: NonEmptyArray<TabProp> }) => {
                         key={tab.name}
                         href={tab.link}
                         className={cn(
-                            "border border-border p-2 bg-background",
-                            isActive ? "bg-foreground text-background" : "bg-background text-foreground",
+                            "border border-border  bg-background flex justify-center items-center",
+                            isActive
+                                ? "bg-foreground text-background"
+                                : "bg-background text-foreground",
                         )}
                     >
                         {tab.name}
