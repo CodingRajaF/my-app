@@ -1,9 +1,8 @@
 import { CustomCard } from "./CustomCard";
 import { TagList } from "./TagList";
 import { getAllPosts } from "@/lib/post";
-const posts = await getAllPosts()
+const posts = await getAllPosts();
 export const Sidebar = () => {
-
     return (
         <div className="col-span-1 flex flex-col gap-5 m-5">
             <CustomCard title={"About"}>
