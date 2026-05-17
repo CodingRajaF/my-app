@@ -1,10 +1,11 @@
-import { FaXTwitter } from "react-icons/fa6";
-import { VscGithubAlt } from "react-icons/vsc";
-import { ExternalLink } from "../ExternalLink";
+import { SiZenn, SiGithub, SiX } from "react-icons/si";
+import { ExternalLink } from "./ExternalLink";
+import { InnerAnimationLink } from "./InnerAnimationLink";
 import { CustomCard } from "./CustomCard";
+import Link from "next/link";
 export const Author = () => {
     return (
-        <CustomCard label={"Author"}>
+        <CustomCard label={"Author"} className="p-3">
             <p className="text-sm text-foreground leading-relaxed text-left">
                 Web系ソフトウェアエンジニアを志望。
                 <br />
@@ -30,10 +31,19 @@ export const Author = () => {
                     </tr>
                 </tbody>
             </table>
-            <div className="flex text-4xl pt-3 justify-evenly gap-2 transition [&_a:hover]:opacity-20 [&_a:hover]:duration-300 ">
-                <ExternalLink linkText={"https://x.com/RyoK73EG"}>
-                    <FaXTwitter />
-                </ExternalLink>
+            <div className="flex items-end">
+                <div className="flex text-3xl pt-3 justify-evenly gap-2 w-1/2 transition [&_a:hover]:opacity-60 [&_a:hover]:duration-500 shadow-2xl">
+                    <ExternalLink linkText="https://x.com/RyoK73EG">
+                        <SiX />
+                    </ExternalLink>
+                    <ExternalLink linkText="https://github.com/RyoK73">
+                        <SiGithub />
+                    </ExternalLink>
+                    <ExternalLink linkText="https://zenn.dev/dashboard">
+                        <SiZenn />
+                    </ExternalLink>
+                </div>
+                <InnerAnimationLink linkText="">[ About → ]</InnerAnimationLink>
             </div>
         </CustomCard>
     );
