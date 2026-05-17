@@ -7,7 +7,7 @@ import {
 } from "../ui/card";
 import { cn } from "@/lib/utils";
 
-type cardProps = {
+type CardProps = {
     title?: string;
     label?: string;
     children: React.ReactNode;
@@ -18,7 +18,7 @@ export const CustomCard = ({
     label,
     children,
     className,
-}: cardProps) => {
+}: CardProps) => {
     return (
         <Card
             className={cn(
