@@ -33,19 +33,22 @@ export const Author = () => {
             <div className="flex items-end">
                 <div className="flex text-3xl text-foreground pt-3 justify-evenly gap-2 w-1/2 transition [&_a]:border [&_a]:border-border shadow-2xl">
                     <ExternalLink
-                        linkText="https://x.com/RyoK73EG"
+                        href="https://x.com/RyoK73EG"
                         className="border-flow"
+
                     >
                         <SiX />
                     </ExternalLink>
                     <ExternalLink
-                        linkText="https://github.com/RyoK73"
+                        href="https://github.com/RyoK73"
                         className="border-flow"
+
                     >
                         <SiGithub />
                     </ExternalLink>
                     <ExternalLink
-                        linkText="https://zenn.dev/taruroma"
+                        href="https://zenn.dev/taruroma"
+
                         className="border-flow"
                     >
                         <SiZenn />

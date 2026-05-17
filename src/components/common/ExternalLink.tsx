@@ -1,21 +1,21 @@
 import Link from "next/link";
 
 type LinkProps = {
-    linkText: string;
+    href: string;
     children?: React.ReactNode;
     ariaLabel?: string;
     className?: string;
 };
 
 export const ExternalLink = ({
-    linkText,
+    href,
     children,
     ariaLabel,
     className,
 }: LinkProps) => {
     return (
         <Link
-            href={linkText}
+            href={href}
             target="_blank"
             rel="noopener noreferrer"
             aria-label={ariaLabel}
