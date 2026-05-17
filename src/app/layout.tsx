@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import { getAllPosts } from "@/lib/post";
 import { Header } from "@/components/common/Header";
 import { Sidebar } from "@/components/common/Sidebar";
 
@@ -26,13 +25,6 @@ export default async function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
-    // Tag Cardに表示するタグを取得する
-    const allPosts = await getAllPosts();
-    const allTags = allPosts
-        .map((post) => {
-            return post.tag;
-        })
-        .flat();
     return (
         <html lang="ja" suppressHydrationWarning>
             <body
