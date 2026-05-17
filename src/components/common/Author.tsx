@@ -10,7 +10,7 @@ export const Author = () => {
                 <br />
                 開発記録や個人的な技術に対する思いを綴ります。
             </p>
-            <table className="border-t border-b w-full border-collapse [&_tr]:border-b [&_td]:py-2 [&_td:first-child]:border-r [&_td:first-child]:border-dashed [&_td:last-child]:pl-2 mt-4">
+            <table className="border-t border-b w-full border-collapse [&_tr]:border-b [&_td]:py-2 [&_td:first-child]:border-r [&_td:first-child]:border-dashed [&_td:last-child]:pl-2 [&_td:last-child]:text-foreground mt-4">
                 <tbody>
                     <tr className="">
                         <td>FOCUS</td>
@@ -31,7 +31,7 @@ export const Author = () => {
                 </tbody>
             </table>
             <div className="flex items-end">
-                <div className="flex text-3xl pt-3 justify-evenly gap-2 w-1/2 transition [&_a]:border [&_a]:border-border shadow-2xl">
+                <div className="flex text-3xl text-foreground pt-3 justify-evenly gap-2 w-1/2 transition [&_a]:border [&_a]:border-border shadow-2xl">
                     <ExternalLink
                         linkText="https://x.com/RyoK73EG"
                         className="border-flow"
