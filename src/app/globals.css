@@ -161,11 +161,7 @@ body {
         --border-flow-color: var(--vivid);
         --border-flow-duration: 700ms;
         position: relative;
-        border: 1px solid transparent;
         padding: 5px;
-    }
-    .border-flow:hover {
-        color: var(--border-flow-color);
     }
     .border-flow::before {
         content: "";
