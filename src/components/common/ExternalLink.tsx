@@ -5,6 +5,7 @@ type LinkProps = {
     children?: React.ReactNode;
     ariaLabel?: string;
     className?: string;
+    key?: string;
 };
 
 export const ExternalLink = ({
@@ -12,6 +13,7 @@ export const ExternalLink = ({
     children,
     ariaLabel,
     className,
+    key,
 }: LinkProps) => {
     return (
         <Link
@@ -20,6 +22,7 @@ export const ExternalLink = ({
             rel="noopener noreferrer"
             aria-label={ariaLabel}
             className={className}
+            key={key}
         >
             {children}
         </Link>
