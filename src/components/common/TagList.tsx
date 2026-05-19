@@ -12,8 +12,11 @@ type TagProps = {
 export const TagList = ({ tags, className }: TagProps) => {
     return (
         <div className="flex flex-wrap gap-1.5 mt-1">
-            {tags.map((tag) => {
-                if (Object.keys(tagJson).includes(tag)) {
+            {tags
+                .filter((tag) => {
+                    Object.keys(tagJson).includes(tag);
+                })
+                .map((tag) => {
                     return (
                         <Link key={tag} href={path.join("/blog/tag", tag)}>
                             <Badge
@@ -27,8 +30,7 @@ export const TagList = ({ tags, className }: TagProps) => {
                             </Badge>
                         </Link>
                     );
-                }
-            })}
+                })}
         </div>
     );
 };
